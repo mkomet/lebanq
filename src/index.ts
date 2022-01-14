@@ -20,6 +20,10 @@ async function printDiscount(bankCredentials: DiscountCredentials) {
       companyId: CompanyTypes.discount,
       startDate: new Date('2021-05-01'),
       combineInstallments: false,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ],
     };
 
     const scraper = createScraper(options);
