@@ -1,16 +1,17 @@
 {
   "name": "lebanq",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Meir Komet",
   "scripts": {
-    "test": "ts-node-dev --respawn --pretty --transpile-only src/index.ts"
+    "test": "ts-node-dev --pretty --transpile-only src/index.ts"
   },
   "keywords": [],
-  "author": "",
   "description": "",
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "israeli-bank-scrapers": "^1.10.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.1",
