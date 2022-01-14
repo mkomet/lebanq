@@ -1,5 +1,6 @@
 import { CompanyTypes, createScraper } from 'israeli-bank-scrapers';
-require('dotenv').config()
+
+require('dotenv').config();
 
 type DiscountCredentials = {
   id: string,
@@ -7,13 +8,13 @@ type DiscountCredentials = {
   num: string,
 };
 
-const bank_credentials = {
-  id: process.env.DISCOUNT_ID as string,
+const discountCredentials = {
+  id: process.env.DISCOUNT_ID,
   password: process.env.DISCOUNT_PASSWORD,
   num: process.env.DISCOUNT_NUM,
 } as DiscountCredentials;
 
-(async function(bank_credentials: DiscountCredentials) {
+async function printDiscount(bankCredentials: DiscountCredentials) {
   try {
     const options = {
       companyId: CompanyTypes.discount,
@@ -22,7 +23,7 @@ const bank_credentials = {
     };
 
     const scraper = createScraper(options);
-    const scrapeResult = await scraper.scrape(bank_credentials);
+    const scrapeResult = await scraper.scrape(bankCredentials);
 
     if (scrapeResult.success) {
       scrapeResult.accounts!.forEach((account) => {
@@ -31,11 +32,12 @@ const bank_credentials = {
           console.log(`found balance: ${account.balance}. for account number ${account.accountNumber}`);
         }
       });
-    }
-    else {
+    } else {
       throw new Error(scrapeResult.errorType);
     }
-  } catch(e: any) {
+  } catch (e: any) {
     console.error(`scraping failed for the following reason: ${e.message}`);
   }
-})(bank_credentials);
+}
+
+printDiscount(discountCredentials);
