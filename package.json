@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Meir Komet",
   "scripts": {
-    "test": "ts-node-dev --pretty --transpile-only src/index.ts"
+    "test": "ts-node-dev --pretty --transpile-only src/index.ts",
+    "lint": "npx eslint src --ext .ts"
   },
   "keywords": [],
   "description": "",
@@ -15,6 +16,11 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.4"
   }
