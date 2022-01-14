@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Meir Komet",
   "scripts": {
-    "start": "ts-node-dev --pretty --transpile-only src/index.ts",
+    "start": "npx ts-node-dev --pretty --transpile-only src/index.ts",
     "lint": "npx eslint src --ext .ts"
   },
   "keywords": [],
